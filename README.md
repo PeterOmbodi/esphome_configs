@@ -61,7 +61,7 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 
 ```
 .
-├── esphome-web-7692c0.yaml         # Main configuration file
+├── esphome-lvgl.yaml               # Main configuration file
 ├── secrets.yaml                    # WiFi, MQTT and other credentials (not included)
 ├── images/                         # Optional: image assets for icons (if used)
 └── fonts/                          # Font files used in display
@@ -87,7 +87,7 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 
 ## 🚀 Setup Instructions
 
-1. Copy the contents of esphome-web-7692c0.yaml into your own ESPHome configuration file.
+1. Copy the contents of esphome-lvgl.yaml into your own ESPHome configuration file.
 Then update the esphome.name field to match the actual name of your device, for example:
 esphome:
   name: my-touchscreen-node
