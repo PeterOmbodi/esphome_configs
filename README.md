@@ -87,11 +87,16 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 
 ## 🚀 Setup Instructions
 
-1. Copy the contents of esphome-web-7692c0.yaml into your own ESPHome configuration file. Copy required fonts into your ESPHome fonts/ folder.
-2. Add or update your `secrets.yaml` as needed.
-3. Make sure all referenced sensors exist in Home Assistant.
-4. Open ESPHome and compile/upload the configuration.
-5. Enjoy your informative, real-time solar and battery dashboard!
+1. Copy the contents of esphome-web-7692c0.yaml into your own ESPHome configuration file.
+Then update the esphome.name field to match the actual name of your device, for example:
+esphome:
+  name: my-touchscreen-node
+
+3. Copy required fonts into your ESPHome fonts/ folder.
+4. Add or update your `secrets.yaml` as needed.
+5. Make sure all referenced sensors exist in Home Assistant.
+6. Open ESPHome and compile/upload the configuration.
+7. Enjoy your informative, real-time solar and battery dashboard!
 
 ---
 
@@ -100,6 +105,13 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 - Add gesture navigation between multiple screens
 - Expand to show historical graphs or max PV forecast for today
 
+---
+
+## 🙏 Credits
+
+This configuration is based on the excellent example by [ivan-rio](https://github.com/ivan-rio).  
+Special thanks to him for the code structure and the clear walkthrough in his video:  
+📺 [Крутий дисплей для Home Assistant | LVGL в ESPHome](https://www.youtube.com/watch?v=efeK-VodNlA)
 ---
 
 ## 📄 License
