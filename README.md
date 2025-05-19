@@ -1,6 +1,6 @@
 # ESPHome Configuration: Battery, Weather, Solar Forecast, and Power Meters
 
-This repository contains a production-ready ESPHome configuration for an ESP32-based 320×240 LVGL touchscreen (CYD - cheap yellow display). 
+This repository contains a ESPHome configuration for an ESP32-based 320×240 LVGL touchscreen (CYD - cheap yellow display). 
 It displays live data from a JK BMS, weather information from OpenWeatherMap, solar irradiance forecast from Solcast, and real-time energy flow metrics for solar and grid usage.
 
 ---
