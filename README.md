@@ -60,11 +60,11 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 ## 📁 File Structure
 
 ```
-.
-├── esphome-lvgl.yaml               # Main configuration file
-├── secrets.yaml                    # WiFi, MQTT and other credentials (not included)
-├── images/                         # Optional: image assets for icons (if used)
-└── fonts/                          # Font files used in display
+.CYD
+  ├── esphome-lvgl.yaml               # Main configuration file
+  ├── secrets.yaml                    # WiFi, MQTT and other credentials (not included)
+  ├── images/                         # Optional: image assets for icons (if used)
+  └── fonts/                          # Font files used in display
 ```
 ## 📷 Screenshots
 
