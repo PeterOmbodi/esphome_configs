@@ -68,7 +68,7 @@ These values are visualized via bars and labels, using dynamic coloring and clea
 ```
 ## 📷 Screenshots
 
-![image](https://github.com/user-attachments/assets/1be807e0-f227-4d53-8365-b4ca3f431394)
+![photo_2025-05-26_14-10-23](https://github.com/user-attachments/assets/52f9af74-afca-4ec8-9734-59765b6c453c)
 
 ---
 
