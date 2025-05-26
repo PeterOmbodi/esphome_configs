@@ -7,9 +7,9 @@ substitutions:
   COLOR_WHITE: "0xFFFFFF"
   COLOR_BLACK: "0x000000"
   COLOR_GREEN: "0x00FF00"
-  COLOR_RED: "0xFF0000"
-  COLOR_BLUE: "0x0000FF"
-  COLOR_YELLOW: "0xFFFF00"
+  COLOR_RED: "0xD32F2F"
+  COLOR_BLUE: "0x2196F3"
+  COLOR_YELLOW: "0xFFEB3B"
   COLOR_YELLOW_DARK: "0xffc107"
 
 esphome:
@@ -213,7 +213,7 @@ lvgl:
         border_width: 0
 
     - obj:
-        id: bgfill
+        id: bg_fill
         width: 312
         height: 232
         align: CENTER
@@ -229,7 +229,7 @@ lvgl:
         text_font: font_50
         text_color: $COLOR_WHITE
         translate_x: 10
-        translate_y: 7
+        translate_y: 2
         widgets:
           - label:
               id: local_time_seconds
@@ -241,9 +241,38 @@ lvgl:
               translate_y: 4
 
     - obj:
+        id: pv_forecast_bottom_bar_obj
+        width: 148
+        height: 26
+        x: 0
+        y: 60
+        align: TOP_MID
+        bg_color: $COLOR_BG1
+        border_width: 0
+        pad_all: 0
+        scrollbar_mode: "OFF"
+        scrollable: false
+        radius: 8
+        widgets:
+          - label:
+              align: BOTTOM_LEFT
+              text: "\U000F0A72"
+              text_font: font_20
+              text_color: $COLOR_WHITE
+              translate_x: 2
+          - label:
+              align: BOTTOM_RIGHT
+              text: "kW"
+              text_font: font_15
+              text_color: $COLOR_WHITE
+              pad_all: 1
+              translate_x: -4
+              translate_y: -4
+
+    - obj:
         id: pv_forecast
         width: 98
-        height: 68
+        height: 72
         x: 0
         y: 8
         align: TOP_MID
@@ -258,7 +287,7 @@ lvgl:
           - obj:
               id: pv_forecast_today_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -268,23 +297,23 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_today_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_today_label
-                    align: BOTTOM_LEFT
+                    align: BOTTOM_MID
                     text: "--"
                     text_font: font_15
                     text_color: $COLOR_WHITE
@@ -294,7 +323,7 @@ lvgl:
           - obj:
               id: pv_forecast_tomorrow_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -305,23 +334,23 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_tomorrow_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_tomorrow_label
-                    align: BOTTOM_LEFT
+                    align: BOTTOM_MID
                     text: "--"
                     text_font: font_15
                     text_color: $COLOR_WHITE
@@ -331,7 +360,7 @@ lvgl:
           - obj:
               id: pv_forecast_day_3_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -342,19 +371,19 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_day_3_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_day_3_label
@@ -368,7 +397,7 @@ lvgl:
           - obj:
               id: pv_forecast_day_4_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -379,19 +408,19 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_day_4_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_day_4_label
@@ -405,7 +434,7 @@ lvgl:
           - obj:
               id: pv_forecast_day_5_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -416,19 +445,19 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_day_5_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_day_5_label
@@ -442,7 +471,7 @@ lvgl:
           - obj:
               id: pv_forecast_day_6_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -453,19 +482,19 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_day_6_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_day_6_label
@@ -479,7 +508,7 @@ lvgl:
           - obj:
               id: pv_forecast_day_7_obj
               width: 14
-              height: 68
+              height: 72
               align: BOTTOM_LEFT
               bg_opa: TRANSP
               border_width: 0
@@ -490,19 +519,19 @@ lvgl:
               widgets:
                 - bar:
                     id: pv_forecast_day_7_bar
-                    align: BOTTOM_LEFT
+                    align: TOP_MID
                     height: 50
                     width: 6
                     min_value: 0
                     max_value: 40
                     mode: NORMAL
                     value: 5
-                    bg_color: $COLOR_PRIMARY
+                    bg_color: $COLOR_BLUE
                     bg_opa: 15%
-                    translate_x: 6
-                    translate_y: -16
+                    translate_x: 2
+                    translate_y: 2
                     indicator:
-                      bg_color: $COLOR_PRIMARY
+                      bg_color: $COLOR_BLUE
                       bg_opa: 100%
                 - label:
                     id: pv_forecast_day_7_label
@@ -515,15 +544,15 @@ lvgl:
 
     - slider:
         id: bright_slider
-        width: 286
-        height: 12
-        x: 0
+        width: 240
+        height: 8
+        x: -30
         y: -10
         align: BOTTOM_MID
         value: ${BRIGHTNESS}
         bg_color: $COLOR_BG1
         indicator:
-          bg_color: $COLOR_PRIMARY
+          bg_color: $COLOR_BG1
           bg_grad_color: $COLOR_SECONDARY
           bg_grad_dir: HOR
         knob:
@@ -532,70 +561,28 @@ lvgl:
           - light.turn_on:
               id: backlight
               brightness: !lambda return float(x)/100;
+        on_value:
+          - lvgl.label.update:
+              id: lbl_bright
+              text: !lambda |-
+                return (std::to_string((int)x) + " \U000F00DF");
 
-    - meter:
-        id: pv_charging_power_meter
-        width: 90
-        height: 90
-        x: 10
-        y: 80
-        align: TOP_LEFT
-        bg_color: $COLOR_BG1
-        scales:
-          range_from: 0
-          range_to: 6000
-          angle_range: 240
-          rotation: 150
-          ticks:
-            count: 0
-            length: 5
-            width: 1
-          indicators:
-            - line:
-                id: pv_charging_power_needle
-                width: 5
-                color: $COLOR_WHITE
-                r_mod: 12
-            - arc:
-                color: $COLOR_YELLOW_DARK
-                r_mod: 10
-                width: 8
-                start_value: 0
-                end_value: 6000
-            - tick_style:
-                start_value: 0
-                end_value: 6000
-                color_start: $COLOR_SECONDARY
-                color_end: $COLOR_PRIMARY
-        widgets:
-          - obj:
-              height: 32
-              width: 32
-              radius: 16
-              align: CENTER
-              border_width: 0
-              pad_all: 0
-              bg_color: $COLOR_BG1
-          - label:
-              id: pv_charging_power_label
-              align: CENTER
-              y: 28
-              text: "---W"
-              text_font: font_20
-              text_color: $COLOR_WHITE
-          - label:
-              align: CENTER
-              text: "\U000F1A74"
-              text_font: font_20
-              text_color: $COLOR_WHITE
+    - label:
+        id: lbl_bright
+        align: BOTTOM_RIGHT
+        x: -8
+        y: -4
+        text: "80 \U000F00DF"
+        text_font: font_18
+        text_color: $COLOR_WHITE
 
     - meter:
         id: grid_input_meter
         width: 90
         height: 90
-        x: 0
+        x: 10
         y: 80
-        align: TOP_MID
+        align: TOP_LEFT
         bg_color: $COLOR_BG1
         scales:
           range_from: 0
@@ -615,19 +602,19 @@ lvgl:
             - arc:
                 color: $COLOR_GREEN
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 0
                 end_value: 1500
             - arc:
                 color: $COLOR_YELLOW_DARK
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 1500
                 end_value: 5500
             - arc:
                 color: $COLOR_RED
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 5500
                 end_value: 8000
             - tick_style:
@@ -658,6 +645,63 @@ lvgl:
               text_color: $COLOR_WHITE
 
     - meter:
+        id: pv_charging_power_meter
+        width: 90
+        height: 90
+        x: 0
+        y: 80
+        align: TOP_MID
+        bg_color: $COLOR_BG1
+        scales:
+          range_from: 0
+          range_to: 6000
+          angle_range: 240
+          rotation: 150
+          ticks:
+            count: 0
+            length: 5
+            width: 1
+          indicators:
+            - line:
+                id: pv_charging_power_needle
+                width: 5
+                color: $COLOR_WHITE
+                r_mod: 12
+            - arc:
+                color: $COLOR_BLUE
+                r_mod: 10
+                width: 4
+                start_value: 0
+                end_value: 6000
+            - tick_style:
+                start_value: 0
+                end_value: 6000
+                color_start: $COLOR_SECONDARY
+                color_end: $COLOR_PRIMARY
+        widgets:
+          - obj:
+              height: 32
+              width: 32
+              radius: 16
+              align: CENTER
+              border_width: 0
+              pad_all: 0
+              bg_color: $COLOR_BG1
+          - label:
+              id: pv_charging_power_label
+              align: CENTER
+              y: 28
+              text: "---W"
+              text_font: font_20
+              text_color: $COLOR_WHITE
+          - label:
+              align: CENTER
+              text: "\U000F1A74"
+              text_font: font_20
+              text_color: $COLOR_WHITE
+
+
+    - meter:
         id: ac_out_watt_meter
         width: 90
         height: 90
@@ -683,19 +727,19 @@ lvgl:
             - arc:
                 color: $COLOR_GREEN
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 0
                 end_value: 1500
             - arc:
                 color: $COLOR_YELLOW_DARK
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 1500
                 end_value: 5500
             - arc:
                 color: $COLOR_RED
                 r_mod: 10
-                width: 8
+                width: 4
                 start_value: 5500
                 end_value: 8000
             - tick_style:
@@ -804,12 +848,13 @@ lvgl:
               id: lbl_weather_forecast_condition_icon
               text: "\U000F14E4"
               text_font: icons_100
-              text_align: LEFT
+              text_align: CENTER
               text_color: $COLOR_WHITE
-              bg_color: $COLOR_BLACK
+              translate_x: 8
+              bg_color: $COLOR_RED
               grid_cell_row_pos: 0
               grid_cell_column_pos: 0
-              grid_cell_column_span: 2
+              grid_cell_column_span: 1
               grid_cell_x_align: START
               grid_cell_y_align: START
 
@@ -856,7 +901,7 @@ lvgl:
           #     grid_cell_x_align: STRETCH
           - label:
               id: lbl_weather_outdnoor_wind
-              text: "--.- km/h"
+              text: "-- km/h"
               text_font: font_18
               text_align: RIGHT
               text_color: $COLOR_WHITE
@@ -1100,7 +1145,6 @@ sensor:
       - lvgl.label.update:
           id: lbl_weather_outdnoor_wind
           text:
-            # format: "%.0f%%"
             format: "%.0f \U000F059D"
             args: [ 'x' ]
 
@@ -1166,6 +1210,7 @@ font:
     id: font_20
     size: 20
     bpp: 4
+    glyphs: "kW0123456789°C.,:!?%+- "
     extras:
       - file: "fonts/materialdesignicons-webfont.ttf"
         glyphs: [
@@ -1176,12 +1221,15 @@ font:
           "\U000F192C", # mdi:transmission-tower-export
           "\U000F1A74", # mdi:solar-power-variant-outline
           "\U000F1904", # mdi:home-lightning-bolt-outline
+          "\U000F0A72", # mdi:solar-power
+          "\U000F00DF", # mdi:brightness-6
         ]
 
   - file: "fonts/BebasNeue-Regular.ttf"
     id: font_18
     size: 18
     bpp: 4
+    glyphs: "kmhW0123456789°C.,:!?%/+- "
     extras:
       - file: "fonts/materialdesignicons-webfont.ttf"
         glyphs: [
@@ -1192,6 +1240,7 @@ font:
           "\U000F192C", # mdi:transmission-tower-export
           "\U000F1A74", # mdi:solar-power-variant-outline
           "\U000F1904", # mdi:home-lightning-bolt-outline
+          "\U000F00DF", # mdi:brightness-6
         ]
 
   - file: "fonts/BebasNeue-Regular.ttf"
